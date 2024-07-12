@@ -1,6 +1,18 @@
 # CPP
 
-**Input Output**
+### [Basic Sheet](https://quickref.me/cpp)
+
+### [Ascii Codes](https://quickref.me/ascii-code)
+
+### PreProcessor
+
+-   `#if`, `#elif`, `#else`: Preprocessor version of condition statements
+-   `#endif`: Used to end an `#if`
+-   `#define`: Defines a text macro.
+-   `#undef`: Un-defines a text macro
+-   `#include`: Includes a source file
+
+### Input Output
 
 ```c++
 #include<iostream> // library containing input output objects stored inside the namespace 'std'
@@ -11,7 +23,6 @@ int main(){
     getline(std::cin, v_name,'$'); // it takes input to be stored in object v_name and '$' acts as a custom delimeter.
     std::cout<<v_name<<endl; // it is used to display output on the screen, endl is used to move to next line
 }
-
 filehandling(){
     std::ofstream outputFile; // output file stream object
     std::ifstream inputFile; // input file stream object
@@ -41,15 +52,7 @@ filehandling(){
 }
 ```
 
-**PreProcessor**
-
--   `#if`, `#elif`, `#else`: Preprocessor version of condition statements
--   `#endif`: Used to end an `#if`
--   `#define`: Defines a text macro.
--   `#undef`: Un-defines a text macro
--   `#include`: Includes a source file
-
-**Datatypes**
+### Datatypes
 
 | DataType      | Size (bytes) |          | Range                               |
 | ------------- | ------------ | -------- | ----------------------------------- |
@@ -72,23 +75,15 @@ filehandling(){
     -   Implicit :- The compilier will automatically converts datatype from low size to higher size. bool => char => short int => int => unsigned int => long => unsigned long => long long => float => double => long double.
     -   Explicit :- We have to specify to which datatype we want to convert. `(type) expression`
 
-**operators**
+### Operators
 
--   Arithematic Operators: + , - , \* , / , % , ++ (Pre and Post) , -- (Pre and Post)
--   Relational Operators: == , != , < , > , <= , >=
--   Bitwise Operatos: ~ , & , | , ^ , << , >>
--   Logical Operatos: ! , && , ||
--   Assignment Operators: += , -= , \*= , /= , %=
+-   **Arithematic Operators**: + , - , \* , / , % , ++ (Pre and Post) , -- (Pre and Post)
+-   **Relational Operators**: == , != , < , > , <= , >=
+-   **Bitwise Operatos**: ~ , & , | , ^ , << , >>
+-   **Logical Operatos**: ! , && , ||
+-   **Assignment Operators**: += , -= , \*= , /= , %=
 
--   if we use left-shift operator such that the leftmost bit becomes the set bit(i.e. = 1), then that number will be perceived as negative number
--   XOR of a number with itself = 0 and XOR of any number with 0 is that number itself
--   **Modular Arithmetic**
-    -   (a+b) % m = (a%m + b%m) %m
-    -   (a-b) % m = (a%m - b%m) %m
-    -   (a*b) % m = (a%m * b%m) %m
-    -   (a/b) % m = (a \* (inverse of b if exists)) %m
-
-**Conditions**
+### Conditions
 
 -   `if (cond) {}`
 -   `if (cond) {} else {}`
@@ -107,7 +102,7 @@ filehandling(){
     ```
 -   Ternary Operator: `res = cond ? s1(cond is true): s2(cond is false);`
 
-**Loops**
+### Loops
 
 -   `for(initialize; cond; increment) {}`
 -   ```cpp
@@ -125,7 +120,7 @@ filehandling(){
 -   `continue` skips that particular iteration and continues the loop
 -   `break` end the iterations and break the loop
 
-**Functions**
+### Functions
 
 -   `return_type function_name (parameter_type parameter_name){ //body }`
 -   Function Declaration: `return_type function_name(parameter_list);`
@@ -140,7 +135,7 @@ filehandling(){
         Pass by reference: Both actual and formal parameters refer to the same locations, so any changes made inside the function are reflected in the actual parameters of the caller.
 -   Lambda Function: `auto lambda_function = [](parameters) -> return_type {};`
 
-**Pointers**
+### Pointers
 
 -   & is reference operator or address operator it returns the address of that var object
 -   stores the address of the variable and `*` is used to dereference that address and access the value
@@ -153,21 +148,22 @@ filehandling(){
       * pointer_name --> value at address of variable_name
     ```
 
-**Time Complexity**
-| Input Length | Worst Accepted Time Complexity | Usually type of solutions |
-| - | - | - |
-| 10 -12 | O(N!) | Recursion and backtracking |
-| 15-18 | O(2<sup>N</sup> _ N) | Recursion, backtracking, and bit manipulation |
-| 18-22 | O(2<sup>N</sup> _ N) | Recursion, backtracking, and bit manipulation |
-| 30-40 | O(2<sup>N/2</sup> \* N) | Meet in the middle, Divide and Conquer |
-| 100 | O(N<sup>4</sup>) | Dynamic programming, Constructive |
-| 400 | O(N<sup>3</sup>) | Dynamic programming, Constructive |
-| 2K | O(N<sup>2</sup> \* log N) | Dynamic programming, Binary Search, Sorting, Divide and Conquer
-| 10K | O(N<sup>2</sup>) | Dynamic programming, Graph, Trees, Constructive |
-| 1M | O(N\* log N) | Sorting, Binary Search, Divide and Conquer |
-| 100M | O(N), O(log N), O(1) | Constructive, Mathematical, Greedy Algorithms |
+### Time Complexity
 
-**Error Handling**
+| Input Length | Worst Accepted Time Complexity | Usually type of solutions                                       |
+| ------------ | ------------------------------ | --------------------------------------------------------------- |
+| 10 -12       | O(N!)                          | Recursion and backtracking                                      |
+| 15-18        | O(2<sup>N</sup> \_ N)          | Recursion, backtracking, and bit manipulation                   |
+| 18-22        | O(2<sup>N</sup> \_ N)          | Recursion, backtracking, and bit manipulation                   |
+| 30-40        | O(2<sup>N/2</sup> \* N)        | Meet in the middle, Divide and Conquer                          |
+| 100          | O(N<sup>4</sup>)               | Dynamic programming, Constructive                               |
+| 400          | O(N<sup>3</sup>)               | Dynamic programming, Constructive                               |
+| 2K           | O(N<sup>2</sup> \* log N)      | Dynamic programming, Binary Search, Sorting, Divide and Conquer |
+| 10K          | O(N<sup>2</sup>)               | Dynamic programming, Graph, Trees, Constructive                 |
+| 1M           | O(N\* log N)                   | Sorting, Binary Search, Divide and Conquer                      |
+| 100M         | O(N), O(log N), O(1)           | Constructive, Mathematical, Greedy Algorithms                   |
+
+### Error Handling
 
 -   `try { throw SomeExceptionType("Error message");} catch( ExceptionName e1 ) {} `
 -   `catch(...)`: catches all types of exceptions

@@ -1,9 +1,9 @@
-# Data Structures
+# DATA STRUCTURES
 
 ![DataStructures](Data%20Structures%20Complexity.png "Data Structures")
 ![DataStructureSelection](Data%20Structures%20Selection.png "Data Structures Selection")
 
-**Arrays**
+### Arrays
 
 -   0-based indexing
 -   Passing arrays to function: when arrays are passed array address is copied in the formal parameters and the elements are accessed by their address
@@ -20,12 +20,12 @@
             }
         ```
 
-**Strings**
+### Strings
 
 -   similar to 1-D Character arrays
 -   '\0'(Null character) is inserted automatically at the end of the string as a terminator
 
-**Linked-List**
+### Linked-List
 
 -   ```cpp
       class ListNode {
@@ -44,12 +44,12 @@
       };
     ```
 
--   Types
+-   **Types**
     -   Single-Linked List: Traversing a singly linked list is done in a forward direction
     -   Doubly-Linked List: Traversal in both forward and backward directions, but it requires additional memory for the backward reference
     -   Circular-Linked List: The last node points back to the head node, creating a circular structure. It can be either singly or doubly linked.
 
-**Trees**
+### Trees
 
 -   ```cpp
       class TreeNode {
@@ -64,7 +64,7 @@
           }
       };
     ```
--   Types
+-   **Types**
     -   Binary Tree
         -   At most 2 children
         -   ![](binaryTree.png "Binary Tree")
@@ -87,12 +87,12 @@
             -   All leaf (NULL) nodes are black nodes.
             -   ![](redblack.png "Red Black Tree")
 
-**Heaps**
+### Heaps
 
 -   It is a complete binary tree with heap order property
 -   A **min** heap is structured with the root node as the smallest and each child subsequently larger than its parent
 -   A **max** heap is structured with the root node as the largest and each child subsequently smaller than its parent
--   MinHeap Implementation
+-   **MinHeap Implementation**
 
     -   ```c++
         class Heap{
@@ -168,7 +168,7 @@
         }
         ```
 
-**Trie**
+### Trie
 
 -   Trie follows some property that If two strings have a common prefix then they will have the same ancestor in the trie.
 -   ```c++
@@ -250,9 +250,9 @@
       };
     ```
 
-**Graphs**
+### Graphs
 
--   Types
+-   **Types**
 
     1. Null Graph: No edges in the graph.
     2. Trivial Graph: Graph having only a single vertex.
@@ -269,7 +269,7 @@
     -   Adjacency Matrix: The graph is represented by a 2D matrix where rows and columns denote vertices. Each entry in the matrix represents the weight of the edge between those vertices
     -   Adjacency List: This graph is represented as a collection of linked lists. There is an array of pointer which points to the edges connected to that vertex.
 
-**Disjoint Set**
+### Disjoint Set
 
 -   Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
 -   ```c++
@@ -344,9 +344,9 @@
       };
     ```
 
-**STL**
+### STL
 
--   Pair
+-   **Pair**
 
     -   ```cpp
         pair<int,int> p = {1,2};
@@ -354,7 +354,7 @@
         cout<<p.second<<endl;// second element in the pair
         ```
 
--   Vectors
+-   **Vectors**
     -   Dynamic allocation
     -   ```cpp
         vectors<int> v;
@@ -369,7 +369,7 @@
         v1.clear(); // empties entire vector
         v1.empty(); // returns boolean value if vector is empty or not
         ```
--   Lists
+-   **Lists**
     -   ```c++
           list<int> l;
           l.push_front(value); // pushes element at the begining of the list
@@ -377,7 +377,7 @@
           l.push_back(value); // pushes element at the end of the list
           // rest are same as vectors
         ```
--   Stack
+-   **Stack**
     -   Last In First Out
     -   ```c++
           stack<int> st;
@@ -388,7 +388,7 @@
           st.empty(); // returns boolean value if stack is empty or not
           st.swap(st2); //swaps the two stacks
         ```
--   Queues
+-   **Queues**
     -   Queue
         -   Fist In First Out
         -   ```c++
@@ -418,7 +418,7 @@
               pq.push(val);
               pq.top(); // view the topmost element
             ```
--   Set
+-   **Set**
 
     -   All elements are unique
     -   ```c++
@@ -442,7 +442,7 @@
             // rest are same as set
             ```
 
--   Map
+-   **Map**
 
     -   Unique keys
     -   ```c++

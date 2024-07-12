@@ -1,18 +1,21 @@
-<a href="https://quickref.me/css3">Basic Sheet</a></br>
+# CSS
 
-**Precedence**
-if internal and external css are defined then the css which is defined later will override the css defined before
-Inline CSS > Internal CSS == External CSS
+### [Basic Sheet (quickref.me)](https://quickref.me/css3)
 
-**Specificity**
-(!important) > Inline Styles > ID > (Classes = pseudo classes = attribute selector) > (Elements = pseudo elements)
+### Precedence
 
-css attribute with '!important' will override any other css applied to that selector
-pseudo clases: :hover
-attribute selectors: [href]
-pseudo elements: ::before
+-   if internal and external css are defined then the css which is defined later will override the css defined before
+-   Inline CSS > Internal CSS == External CSS
 
-**Units**
+### Specificity
+
+-   (!important) > Inline Styles > ID > (Classes = pseudo classes = attribute selector) > (Elements = pseudo elements)
+-   css attribute with '!important' will override any other css applied to that selector
+    pseudo clases: :hover
+    attribute selectors: [href]
+    pseudo elements: ::before
+
+### Units
 
 -   Absolute Units
     -   cm, mm, in, px, pt, pc
@@ -31,20 +34,19 @@ pseudo elements: ::before
 
 -   **Note** viewport dimensions does not accounts for scroll bars on the right and bottom
 
-**Box Model**
+### Box Model
 
 -   ![Box Model](https://imgs.search.brave.com/bPah35-j48a-p2S3AMOPiDNhUARMu4tJy2wtmky4M9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuamF2YXRwb2lu/dC5jb20vY3NzcGFn/ZXMvaW1hZ2VzL2Nz/cy1ib3gtbW9kZWwu/cG5n)
-
 -   Box-sizing attribute can take 2 values
     -   content-box: (default) all the width specified is taken by the content area and if border and padding are set then box will appear bigger than expected
     -   border-box: the width specified is taken by the entire box including border and padding
 
-<a href="https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G">Float </a>
+### [Float](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
 
-<a href="https://youtu.be/n4R2E7O-Ngo?t=11539&si=lK705OUlGp3BIyLL">Columns </a>
+### [Columns](https://youtu.be/n4R2E7O-Ngo?t=11539&si=lK705OUlGp3BIyLL)
 
-<a href="https://youtu.be/n4R2E7O-Ngo?t=12843&si=x0nhHHWRKsUmBYVz">Position </a>
+### [Position](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
 
-<a href="https://youtu.be/n4R2E7O-Ngo?t=14246&si=5j5bh-9ivbrrfkLG">Flexbox</a>
+### [Flexbox](https://youtu.be/n4R2E7O-Ngo?t=14246&si=5j5bh-9ivbrrfkLG)
 
-<a href="https://youtu.be/n4R2E7O-Ngo?t=17166&si=AQ51bKvIYk9JIn2z">More on CSS images and background-images</a>
+### [CSS images and background images](https://youtu.be/n4R2E7O-Ngo?t=17166&si=AQ51bKvIYk9JIn2z)
