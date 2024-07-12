@@ -65,7 +65,7 @@ filehandling(){
 | signed char   | 1            | signed   | -128 to 127                         |
 |               |              | unsigned | 0 to 255                            |
 | wchar_t       | 2 or 4 bytes |          | 1 wide character                    |
-| bool          | 1 bit        |          | True or False (0 or 1)              |
+| bool          | 1 byte       |          | True or False (0 or 1)              |
 
 -   Negative numbers are stored after taking 2's complement
 -   **Type Casting**
@@ -105,6 +105,7 @@ filehandling(){
           default:
       }
     ```
+-   Ternary Operator: `res = cond ? s1(cond is true): s2(cond is false);`
 
 **Loops**
 
