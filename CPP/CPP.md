@@ -1,10 +1,10 @@
 # CPP
 
-### [Basic Sheet](https://quickref.me/cpp)
+### 1. [Basic Sheet](https://quickref.me/cpp)
 
-### [Ascii Codes](https://quickref.me/ascii-code)
+### 2. [Ascii Codes](https://quickref.me/ascii-code)
 
-### PreProcessor
+### 3. PreProcessor
 
 -   `#if`, `#elif`, `#else`: Preprocessor version of condition statements
 -   `#endif`: Used to end an `#if`
@@ -12,7 +12,7 @@
 -   `#undef`: Un-defines a text macro
 -   `#include`: Includes a source file
 
-### Input Output
+### 4. Input Output
 
 ```c++
 #include<iostream> // library containing input output objects stored inside the namespace 'std'
@@ -52,7 +52,7 @@ filehandling(){
 }
 ```
 
-### Datatypes
+### 5. Datatypes
 
 | DataType      | Size (bytes) |          | Range                               |
 | ------------- | ------------ | -------- | ----------------------------------- |
@@ -75,7 +75,7 @@ filehandling(){
     -   Implicit :- The compilier will automatically converts datatype from low size to higher size. bool => char => short int => int => unsigned int => long => unsigned long => long long => float => double => long double.
     -   Explicit :- We have to specify to which datatype we want to convert. `(type) expression`
 
-### Operators
+### 6. Operators
 
 -   **Arithematic Operators**: + , - , \* , / , % , ++ (Pre and Post) , -- (Pre and Post)
 -   **Relational Operators**: == , != , < , > , <= , >=
@@ -83,7 +83,9 @@ filehandling(){
 -   **Logical Operatos**: ! , && , ||
 -   **Assignment Operators**: += , -= , \*= , /= , %=
 
-### Conditions
+### 7. [Maths](Maths/Maths.md)
+
+### 8. Conditions
 
 -   `if (cond) {}`
 -   `if (cond) {} else {}`
@@ -102,7 +104,7 @@ filehandling(){
     ```
 -   Ternary Operator: `res = cond ? s1(cond is true): s2(cond is false);`
 
-### Loops
+### 9. Loops
 
 -   `for(initialize; cond; increment) {}`
 -   ```cpp
@@ -120,7 +122,7 @@ filehandling(){
 -   `continue` skips that particular iteration and continues the loop
 -   `break` end the iterations and break the loop
 
-### Functions
+### 10. Functions
 
 -   `return_type function_name (parameter_type parameter_name){ //body }`
 -   Function Declaration: `return_type function_name(parameter_list);`
@@ -135,7 +137,7 @@ filehandling(){
         Pass by reference: Both actual and formal parameters refer to the same locations, so any changes made inside the function are reflected in the actual parameters of the caller.
 -   Lambda Function: `auto lambda_function = [](parameters) -> return_type {};`
 
-### Pointers
+### 11. Pointers
 
 -   & is reference operator or address operator it returns the address of that var object
 -   stores the address of the variable and `*` is used to dereference that address and access the value
@@ -148,7 +150,7 @@ filehandling(){
       * pointer_name --> value at address of variable_name
     ```
 
-### Time Complexity
+### 12. Time Complexity
 
 | Input Length | Worst Accepted Time Complexity | Usually type of solutions                                       |
 | ------------ | ------------------------------ | --------------------------------------------------------------- |
@@ -163,7 +165,7 @@ filehandling(){
 | 1M           | O(N\* log N)                   | Sorting, Binary Search, Divide and Conquer                      |
 | 100M         | O(N), O(log N), O(1)           | Constructive, Mathematical, Greedy Algorithms                   |
 
-### Error Handling
+### 13. Error Handling
 
 -   `try { throw SomeExceptionType("Error message");} catch( ExceptionName e1 ) {} `
 -   `catch(...)`: catches all types of exceptions
@@ -171,3 +173,11 @@ filehandling(){
 -   If an exception is thrown and not caught anywhere, the program terminates abnormally.
 -   try/catch blocks can be nested. Also, an exception can be re-thrown using “throw; “.
 -   When an exception is thrown, all objects created inside the enclosing try block are destroyed before the control is transferred to the catch block.
+
+### 14. [OOPS](OOPS/OOPS.md)
+
+### 15. [Data Structures](Data%20Structures/DataStructures.md)
+
+### 16. [Algorithms](Algorithms/Algorithms.md)
+
+### 17. [Competitive Programming](Competitive%20Programming/CP.md)

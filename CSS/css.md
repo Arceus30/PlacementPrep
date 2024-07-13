@@ -1,13 +1,13 @@
 # CSS
 
-### [Basic Sheet (quickref.me)](https://quickref.me/css3)
+### 1. [Basic Sheet (quickref.me)](https://quickref.me/css3)
 
-### Precedence
+### 2. Precedence
 
 -   if internal and external css are defined then the css which is defined later will override the css defined before
 -   Inline CSS > Internal CSS == External CSS
 
-### Specificity
+### 3. Specificity
 
 -   (!important) > Inline Styles > ID > (Classes = pseudo classes = attribute selector) > (Elements = pseudo elements)
 -   css attribute with '!important' will override any other css applied to that selector
@@ -15,7 +15,7 @@
     attribute selectors: [href]
     pseudo elements: ::before
 
-### Units
+### 4. Units
 
 -   Absolute Units
     -   cm, mm, in, px, pt, pc
@@ -34,19 +34,21 @@
 
 -   **Note** viewport dimensions does not accounts for scroll bars on the right and bottom
 
-### Box Model
+### 5. Box Model
 
 -   ![Box Model](https://imgs.search.brave.com/bPah35-j48a-p2S3AMOPiDNhUARMu4tJy2wtmky4M9M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuamF2YXRwb2lu/dC5jb20vY3NzcGFn/ZXMvaW1hZ2VzL2Nz/cy1ib3gtbW9kZWwu/cG5n)
 -   Box-sizing attribute can take 2 values
     -   content-box: (default) all the width specified is taken by the content area and if border and padding are set then box will appear bigger than expected
     -   border-box: the width specified is taken by the entire box including border and padding
 
-### [Float](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
+### 6. [Float](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
 
-### [Columns](https://youtu.be/n4R2E7O-Ngo?t=11539&si=lK705OUlGp3BIyLL)
+### 7. [Columns](https://youtu.be/n4R2E7O-Ngo?t=11539&si=lK705OUlGp3BIyLL)
 
-### [Position](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
+### 8. [Position](https://youtu.be/n4R2E7O-Ngo?t=10794&si=FJC24gNP06Qqmw0G)
 
-### [Flexbox](https://youtu.be/n4R2E7O-Ngo?t=14246&si=5j5bh-9ivbrrfkLG)
+### 9. [Flexbox](https://youtu.be/n4R2E7O-Ngo?t=14246&si=5j5bh-9ivbrrfkLG)
 
-### [CSS images and background images](https://youtu.be/n4R2E7O-Ngo?t=17166&si=AQ51bKvIYk9JIn2z)
+-   ![](./4-flexbox-axes.avif "FlexBox Axes")
+
+### 10. [CSS images and background images](https://youtu.be/n4R2E7O-Ngo?t=17166&si=AQ51bKvIYk9JIn2z)

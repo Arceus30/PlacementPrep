@@ -1,12 +1,8 @@
 # JAVASCRIPT
 
-### [Basic Sheet](https://quickref.me/javascript)
+### 1. [Basic Sheet](https://quickref.me/javascript)
 
-### [JSON Basic Sheet](https://quickref.me/json)
-
-### [Web (local and session) Storage API](https://youtu.be/EfAl9bwzVZk?t=19267&si=3aROn8Zc3koCM9XV)
-
-### DataTypes
+### 2. DataTypes
 
 -   Number
 -   String
@@ -22,11 +18,11 @@
     -   `String(a)`: it converts any datatype to string
     -   `boolean(a)`: it converts any datatype to boolean, it assumes 0 as false and any other integer as true
 
-### var let const
+### 3. var let const
 
 ![](https://imgs.search.brave.com/I668U4U6VK3Ix8X5_SB3fi5ZCHpM3UF553fPAb7YtQk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q1/NjEyQVFHWkxLalNa/T3pBZ2cvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNjAw/XzIwMDAvMC8xNjg3/ODMwMDEwMDkzP2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD1KOTR1/VUxiQWVMTE1YdHRt/bU9SeTU5TGszZzNL/MUlIQUUyNjNpMVFH/SG00)
 
-### Functions
+### 4. Functions
 
 -   Passing one arguement to the function, second parameters automatically assumes "undefined" value
 -   default parameters: `function multiply(a, b = 1) {//body}`
@@ -49,14 +45,14 @@
             f1();
             ```
 
-### Callbacks
+### 5. Callbacks
 
 -   Functions passed as arguement to other function: `const calculate = (a, b, func) => {//body};`
 -   `setTimeout(callback_func,delay, params for callback_func)`: it takes two parameters, and returns timeID, it calls the callback function after x miliseconds
     -   `clearTimeout()` is used to cancel the execution of the setTimeout
 -   `setInterval()` and `clearInterval()`
 
-### Promises
+### 6. Promises
 
 -   The Promise object represents the eventual completion or failure of an asynchronous operation and its resulting value. `Promise((resolve, reject)=>{//fun_body})`
 -   fun_body is executed and if it is success then resolve is thrown or else reject is thrown if failed
@@ -79,7 +75,7 @@
         });
     ```
 
-### Async-Await
+### 7. Async-Await
 
 -   It implements asynchronous code
 -   An async function is created: `async func(params){}`
@@ -95,7 +91,7 @@
     ```
 -   Error inside async function can be handled by try...catch()
 
-### Currying
+### 8. Currying
 
 -   a function with multiple arguments is transformed into a sequence of nested functions, each taking a single argument. This allows to partially apply the function to some arguments and delay the application of the rest until later.
 -   ```js
@@ -115,13 +111,13 @@
     step2("BODY");
     ```
 
-### Error Handling
+### 9. Error Handling
 
 -   `try...catch`
 -   `try...catch...finally`
 -   we can throw custom Errors from the try block: `try { throw new Error();}`
 
-### JSON
+### 10. [JSON ](https://quickref.me/json)
 
 -   Javascript Object Notation
 -   `obj = JSON.parse(json)`: converts json string into js object
@@ -129,7 +125,7 @@
 -   Data Representation Format
 -   Commonly used for APIs and Configs
 
-### DOM
+### 11. DOM
 
 -   DOM: Document Object Model
 -   Selection
@@ -188,3 +184,11 @@
     -   In case of forms `evt.preventDefault()` is used to change the default actions of the forms
     -   Event Bubbling: when an event is triggered by a nested element the trigerr propogates upward untill the root element is reached or propogation is stopped by `e.stopPropagation();`
     -   Event Delegation: an event listener is attached to the parent element and event bubbling is used to handle the events that occur inside the parent element
+
+### 12. [Web (local and session) Storage API](https://youtu.be/EfAl9bwzVZk?t=19267&si=3aROn8Zc3koCM9XV)
+
+### 13. [Data Structures](Data%20Structures/DataStructures.md)
+
+### 14. [Oops](Oops/Oops.md)
+
+### 15. [Regex](https://quickref.me/regex)

@@ -1,4 +1,4 @@
-# GIT - GITHUB
+# Git - GitHub
 
 ### [Basic Sheet](https://quickref.me/git)
 

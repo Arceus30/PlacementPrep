@@ -1,55 +1,27 @@
 # PLACEMENT PREP
 
-### [HTML](HTML/Html.md)
+### 1. [CPP](CPP/CPP.md)
 
-### [CSS](CSS/Css.md)
+### 2. [HTML](HTML/Html.md)
 
-### [Git](Git/GitGithub.md)
+### 3. [CSS](CSS/CSS.md)
 
-### [Markdown](Markdown/Markdown.md)
+### 4. [JS](JS/JS.md)
 
-### [JS](JS/Js.md)
+### 5. [MongoDB](MongoDB/MongoDB.md)
 
-### [JS OOPS](OOPS/JS/Js.md)
+### 6. [Express](Express/Express.md)
 
-### [Algorithms](DSA/Algorithms/Algorithms.md)
+### 7. [React](React/React.md)
 
-### [JS Datastructures](DSA/DataStructures/JS/DataStructures.md)
+### 8. [NodeJS](NodeJS/NodeJS.md)
 
-### [Regex](Regex/Regex.md)
+### 9. [GIT](Git/GitGithub.md)
 
-### [React](React/React.md)
+### 10. [Computer Networks](CN/ComputerNetworks.md)
 
-### [React Testing](React/RectTesting.md)
+### 11. [DBMS](DBMS/DBMS.md)
 
-### [NodeJS](Node/NodeJS.md)
+### 12. [Operating System](Operating%20System/OS.md)
 
-### [Express](Node/Express.md)
-
-### [MongoDB](MongoDB/MongoDB.md)
-
-### [HTTP Status Codes](Node/Http.md)
-
-### [EJS](Node/Ejs.md)
-
-### [Babel](Node/Babel.md)
-
-### [Deployments](Deployments/Deployments.md)
-
-### [Competitive Programming](CP/CompetitiveProgramming.md)
-
-### [CPP](CPP/CPP.md)
-
-### [CPP Datastructures](DSA/DataStructures/CPP/DataStructures.md)
-
-### [CPP OOPS](OOPS/CPP/OOPS.md)
-
-### [Maths](Maths/Maths.md)
-
-### [Computer Networks](CN/ComputerNetworks.md)
-
-### [DBMS](DBMS/DBMS.md)
-
-### [OS](OperatingSystem/OS.md)
-
-### [System Design](SystemDesign/SystemDesign.md)
+### 13. [System Design](System%20Design/SystemDesign.md)
