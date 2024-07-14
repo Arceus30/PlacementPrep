@@ -1,6 +1,8 @@
 # HTTP Server
 
-### 1. REST Http methods
+### 1. RESTful Http
+
+**HTTP methods**
 
 -   **GET**
     -   retrieve data
@@ -28,6 +30,14 @@
     -   describes the communication options for the target resource.
 -   **TRACE**
     -   performs a message loop-back test along the path to the target resource.
+
+**How response should be sent**
+
+-   When browser is the only client then response should be sent in html format to decrease the load on the client( Server Side Rendering)
+-   When anybody can be client then response (i.e, raw data) should be sent in json format (Client Side Rendering)
+-   it is a recommended way to make a hybrid system in which
+    -   /abc :- returns the complete html document
+    -   /api/abc :- returns only the requested data
 
 ### 2. HTTP Server And Url
 

@@ -1,6 +1,6 @@
 # NodeJS
 
--   WHILE SHARING: delete the node_modules folder and share the rest of the files of the project
+-   WHILE SHARING: delete the node_modules folder and share the rest of the files of the project or add node_modules in the .gitignore file
 -   use `npm install` to install all the necessary dependencies
 -   npm: Node Package Manager is used to manage node packages utilised by the program
 -   DOM/UI related functions like alert(), prompt(), etc works only in browser and not in nodeJS
@@ -47,6 +47,24 @@
 
 ### 2. [File Handling](File%20Handling/FileHandling.md)
 
-### 3. [HTTP Server](HTTP%20Server/HTTPServer.md)
+### 3. uuid
+
+-   used to generating unique universal identification number
+-   ```js
+    const uuid = require("uuid");
+    console.log(uuid.v4()); // more are available but this is widely used
+    ```
 
 ### 4. [Babel (for futuristic features)](Babel/Babel.md)
+
+### 5. Package Versioning
+
+-   `a.b.c`
+
+    -   a represents major change
+    -   b represents recommended security fix
+    -   c represents minor changes (optional)
+
+-   `^a.b.c`: do not change 'a', but can change b or c
+-   `~a.b.c`: do not change 'a' and 'b', can only change c
+-   `a.b.c.`: exact version

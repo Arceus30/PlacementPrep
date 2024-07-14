@@ -8,6 +8,8 @@
 -   group of document is called collection
 -   group of collection is called database
 
+**Use mongoDB atlas for deployed database**
+
 ### 2. Sorting
 
 -   `db.collection.find().sort({sortingOrder: (1/-1) })`
