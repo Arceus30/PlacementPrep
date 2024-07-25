@@ -11,27 +11,25 @@
 
     -   Sending tokens/keys via response:
 
-        -   ```js
-            //server
-            res.json({ token: token });
+        ```js
+        //server
+        res.json({ token: token });
 
-            //client
-            // client can now store this token with it and send it with subsequent requests (Note: token will not be sent automatically)
+        //client
+        // client can now store this token with it and send it with subsequent requests (Note: token will not be sent automatically)
 
-            const header = {
-                token: token,
-            };
-            // this header is attached to every request and server will then check this header and verifies
+        const header = {
+            token: token,
+        };
+        // this header is attached to every request and server will then check this header and verifies
 
-            // or
-            // this is the standard practice
-            const header = {
-                // Authorization: <auth-schema> <token>,
-                Authorization: Bearer <token>, // Bearer is used for token authentication
-            }
-            ```
-
--   Any encrypted key should not be shared with anyone
+        // or
+        // this is the standard practice
+        const header = {
+            // Authorization: <auth-schema> <token>,
+            Authorization: Bearer <token>, // Bearer is used for token authentication
+        }
+        ```
 
 ### 2. Authorization
 
@@ -45,25 +43,22 @@
 -   cookies can be signed to maintain its integrity
     -   a secret is maintained and inside that secret the value is added
 -   `res.cookie` is used to set the cookies (key-value pair)
-    -   ```js
-        app.get(path, (req, res) => {
-            res.cookie("key", "value", { signed: true });
-        });
-        ```
--   `cookie-parser` is a middleware which parse cookies attached to the client request object and populate the req.cookies property with an object keyed by the cookie names.
-
-    -   ```js
-        const cookieParser = require("cookie-parser");
-        app.use(cookieParser(#secret));
-        res.cookie("attrib", "val",{signed: true});
-        // cookies are added in req.cookies
-        console.dir(req.cookies);
-        // signed cookies are not added above instead they are added in
-        console.dir(req.signedCookies);
-
-        res.clearCookie(#cookieName);
-        ```
-
+    ```js
+    app.get(path, (req, res) => {
+        res.cookie("key", "value", { signed: true });
+    });
+    ```
+-   `cookie-parser` is a middleware which parse cookies attached to the client request object and populate the req.cook ies property with an object keyed by the cookie names.
+    ```js
+    const cookieParser = require("cookie-parser");
+    app.use(cookieParser(#secret));
+    res.cookie("attrib", "val",{signed: true});
+    // cookies are added in req.cookies
+    console.dir(req.cookies);
+    // signed cookies are not added above instead they are added in
+    console.dir(req.signedCookies);
+    res.clearCookie(#cookieName);
+    ```
 -   cookies are domain specific
 
 ### 4. JWT
@@ -74,68 +69,72 @@
 -   browser will send this token on subsequent requests to the site, and updates the token if changed by the server
 -   tokens are signed to maintain its integrity
     -   a secret is maintained and inside that secret the value is added
--   ```js
-    // auth.js (middleware)
-    const jwt = require("jsonwebtoken");
-    const secret = "";
-    const setUser = (data) => {
-        const payload = {
-            key: value, //data
-        };
-        return jwt.sign(payload, secret);
-    };
-    const getUser = (token) => {
-        if (!token) return null;
-        try {
-            return jwt.verify(token, secret);
-        } catch (e) {
-            return null;
-        }
-    };
+-   Two tokens should be created:
+    -   Access Token: Short Spanned (usually 15m-30m), stored in memory
+    -   Refresh Token: Long Spanned (usually, 30d), stored in http-only cookie, when access token expires Refresh Token is used to create new access token
 
-    // controller
-    const func = (req, res, next) => {
-        // body
-
-        const token = setUser(data);
-        res.cookies("uid", token);
+```js
+// auth.js (middleware)
+const jwt = require("jsonwebtoken");
+const secret = "";
+const setUser = (data) => {
+    const payload = {
+        key: value, //data
     };
-    ```
+    return jwt.sign(payload, secret);
+};
+const getUser = (token) => {
+    if (!token) return null;
+    try {
+        return jwt.verify(token, secret);
+    } catch (e) {
+        return null;
+    }
+};
+
+// controller
+const func = (req, res, next) => {
+    // body
+
+    const token = setUser(data);
+    res.cookies("uid", token);
+};
+```
 
 ### 5. Crypto
 
 -   in-built library used for hashing passwords
 -   it generates unique salt and hashed password for specified passwords
 -   this salt and hashed password should be stored in the database since they are unique for each entry
--   ```js
-    const { createHmac, randomBytes } = require("crypto");
 
-    userSchema.pre("save", function (next) {
-        const user = this;
-        if (!user.isModified("password")) return;
-        const salt = randomBytes(16).toString();
-        const hashedPassword = createHmac("sha256", salt)
-            .update(user.password)
-            .digest("hex");
+```js
+const { createHmac, randomBytes } = require("crypto");
+userSchema.pre("save", function (next) {
+    const user = this;
+    if (!user.isModified("password")) return;
+    const salt = randomBytes(16).toString();
+    const hashedPassword = createHmac("sha256", salt)
+        .update(user.password)
+        .digest("hex");
 
-        this.salt = salt;
-        this.password = hashedPassword;
-        next();
-    });
+    this.salt = salt;
+    this.password = hashedPassword;
+    next();
+});
 
-    userSchema.static("matchedPassword", function (email, password) {
-        const user = User.findOne({ email });
-        if (!user) return false;
+userSchema.static("matchedPassword", function (email, password) {
+    const user = User.findOne({ email });
+    if (!user) return false;
 
-        const salt = user.salt;
-        const hashedPassword = user.password;
+    const salt = user.salt;
+    const hashedPassword = user.password;
 
-        return (
-            createHmac("sha256", salt).update(password).digest("hex") ===
-            hashedPassword
-        );
-    });
-    ```
+    return (
+        createHmac("sha256", salt).update(password).digest("hex") ===
+        hashedPassword
+    );
+});
+```
 
 ### 6. Bcrypt
 
@@ -152,29 +151,34 @@
 -   it is updated everytime a session / webpage is loaded
 -   By default MemoryState is used as storage which should be used only for development and debugging purposes
     -   other session stores should be used for production
--   ```js
-    const session = require("express-session");
-    const sessionOptions = {
-        secret: "thisisasecret",
-        resave: false,
-        saveUninitialized: false,
-    };
-    app.use(session(sessionOptions));
-    ```
+
+```js
+const session = require("express-session");
+const sessionOptions = {
+    secret: "thisisasecret",
+    resave: false,
+    saveUninitialized: false,
+};
+app.use(session(sessionOptions));
+```
+
 -   **Connect-Flash** uses session and displays one time message
-    -   ```js
-        req.flash(#type, message);
-        // the message is stored against the type in the session
-        // and it can be accessed like
-        app.get(path,(req,res)=>{
-            res.render(path, {message: req.flash(type)});
-        });
-        // another way: By defining in the local storage using the middle flash is available to views
-        app.use((req,res,next)=>{
-            res.locals.messages = res.flash(type);
-            next();
-        })
-        app.get(path,(req,res)=>{
-            res.render(path, {message: req.flash(type)});
-        });
-        ```
+
+    ```js
+    req.flash(#type, message);
+    // the message is stored against the type in the session
+    // and it can be accessed like
+    app.get(path,(req,res)=>{
+        res.render(path, {message: req.flash(type)});
+    });
+    // another way: By defining in the local storage using the middle flash is available to views
+    app.use((req,res,next)=>{
+        res.locals.messages = res.flash(type);
+        next();
+    })
+    app.get(path,(req,res)=>{
+        res.render(path, {message: req.flash(type)});
+    });
+    ```
+
+-   **Connect-mongoh** creates a store in mongodb Database which will be used by session to store information

@@ -1,46 +1,45 @@
 # CPP
 
-### 1. [Basic Sheet](https://quickref.me/cpp)
+#### 1. [Basic Sheet](https://quickref.me/cpp)
 
-### 2. [Ascii Codes](https://quickref.me/ascii-code)
+#### 2. [Ascii Codes](https://quickref.me/ascii-code)
 
-### 3. PreProcessor
-
--   `#if`, `#elif`, `#else`: Preprocessor version of condition statements
--   `#endif`: Used to end an `#if`
--   `#define`: Defines a text macro.
--   `#undef`: Un-defines a text macro
--   `#include`: Includes a source file
-
-### 4. Input Output
+#### 3. Input Output
 
 ```c++
-#include<iostream> // library containing input output objects stored inside the namespace 'std'
-#include <fstream> // library containing file handling objects stored inside the namespace 'std'
+#include<iostream>
+#include <fstream>
 int main(){
     int v_name;
-    std::cin>>v_name; // it takes a continuous input without whitespace, '\t', '\n'.
-    getline(std::cin, v_name,'$'); // it takes input to be stored in object v_name and '$' acts as a custom delimeter.
-    std::cout<<v_name<<endl; // it is used to display output on the screen, endl is used to move to next line
+
+    // input without whitespace, '\t', '\n'.
+    std::cin>>v_name;
+
+    // input to be stored in object v_name and '$' acts as a custom delimeter.
+    getline(std::cin, v_name,'$');
+
+    std::cout<<v_name<<endl;
 }
 filehandling(){
-    std::ofstream outputFile; // output file stream object
-    std::ifstream inputFile; // input file stream object
 
-    outputFile.open("example.txt"); // Open a file for writing
-    inputFile.open("example.txt"); // Open a file for reading
+    // file stream object
+    std::ofstream outputFile;
+    std::ifstream inputFile;
+
+    // Open a file
+    outputFile.open("example.txt");
+    inputFile.open("example.txt");
 
     // Check if the file opened successfully
     if (!outputFile.is_open()) {
         std::cerr << "Error opening file!" << std::endl;
-        return 1; // Exit the program with an error code
     }
 
     // Write data to the file
     outputFile << "Hello, world!" << std::endl;
     outputFile << "This is a test file." << std::endl;
 
-    // Read data from the file and print it to the console
+    // Read data from the file
     std::string line;
     while (std::getline(inputFile, line)) {
         std::cout << line << std::endl;
@@ -52,105 +51,25 @@ filehandling(){
 }
 ```
 
-### 5. Datatypes
+#### 4. Datatypes
 
-| DataType      | Size (bytes) |          | Range                               |
-| ------------- | ------------ | -------- | ----------------------------------- |
-| short int     | 2            | signed   | -2<sup>15</sup> to 2<sup>15</sup>-1 |
-|               |              | unsigned | 0 to 2<sup>16</sup>-1               |
-| int           | 4            | signed   | -2<sup>31</sup> to 2<sup>31</sup>-1 |
-|               |              | unsigned | 0 to 2<sup>32</sup>-1               |
-| long long int | 8            | signed   | -2<sup>63</sup> to 2<sup>63</sup>-1 |
-|               |              | unsigned | 0 to 2<sup>64</sup>-1               |
-| float         | 4            |          | -3.4×10^38 to 3.4×10^38             |
-| double        | 8            |          | -1.7×10^308 to1.7×10^308            |
-| long double   | 16           |          | -1.1×10^4932 to1.1×10^4932          |
-| signed char   | 1            | signed   | -128 to 127                         |
-|               |              | unsigned | 0 to 255                            |
-| wchar_t       | 2 or 4 bytes |          | 1 wide character                    |
-| bool          | 1 byte       |          | True or False (0 or 1)              |
-
+-   [GFG](https://www.geeksforgeeks.org/cpp-data-types/)
 -   Negative numbers are stored after taking 2's complement
 -   **Type Casting**
-    -   Implicit :- The compilier will automatically converts datatype from low size to higher size. bool => char => short int => int => unsigned int => long => unsigned long => long long => float => double => long double.
-    -   Explicit :- We have to specify to which datatype we want to convert. `(type) expression`
+    -   Implicit :- casting done by compilier automatically. bool => char => short int => int => unsigned int => long => unsigned long => long long => float => double => long double.
+    -   Explicit :- `datatype var_name = (type) expression`
 
-### 6. Operators
+#### 5. Operators
 
--   **Arithematic Operators**: + , - , \* , / , % , ++ (Pre and Post) , -- (Pre and Post)
--   **Relational Operators**: == , != , < , > , <= , >=
--   **Bitwise Operatos**: ~ , & , | , ^ , << , >>
--   **Logical Operatos**: ! , && , ||
--   **Assignment Operators**: += , -= , \*= , /= , %=
+-   Arithematic Operators (Not included in the reference file above): + , - , \* , / , % , ++ (Pre and Post) , -- (Pre and Post)
 
-### 7. [Maths](Maths/Maths.md)
+#### 6. [Functions (GFG)](https://www.geeksforgeeks.org/functions-in-cpp/)
 
-### 8. Conditions
+#### 7. [Lambda Expressions (GFG)](https://www.geeksforgeeks.org/lambda-expression-in-c/)
 
--   `if (cond) {}`
--   `if (cond) {} else {}`
--   `if (cond1) {} else if (cond2) {} else {}`
--   ```cpp
-      if (cond1) {
-          if (cond2) {}
-      }
-    ```
--   ```c++
-      switch(val){
-          case cond1:
-          case cond2:
-          default:
-      }
-    ```
--   Ternary Operator: `res = cond ? s1(cond is true): s2(cond is false);`
+#### 8. [Pointers (GFG)](https://www.geeksforgeeks.org/cpp-pointers/)
 
-### 9. Loops
-
--   `for(initialize; cond; increment) {}`
--   ```cpp
-      //initialize
-      while(cond) {
-          increment
-      }
-    ```
--   ```cpp
-      initialize;
-      do{
-          increment
-      }while(cond)
-    ```
--   `continue` skips that particular iteration and continues the loop
--   `break` end the iterations and break the loop
-
-### 10. Functions
-
--   `return_type function_name (parameter_type parameter_name){ //body }`
--   Function Declaration: `return_type function_name(parameter_list);`
--   Types of parameters
-    -   Formal Parameter: parameters received by the function
-    -   Actual Parameter: parameters passed to the function
--   Function with Default Parameters: `return_type function_with_defaults(type parameter1,type parameter2 = default_value2) {}`
--   Ways to pass the parameter
-    -   `return_type function_name (parameter_type parameter_name){ //body }`
-        Pass by Value: values of actual parameters are copied to the function’s formal parameters. Actual and formal parameters are stored in different memory locations so any changes made in the functions are not reflected in the actual parameters of the caller
-    -   `return_type function_name (parameter_type & parameter_name){ //body }`
-        Pass by reference: Both actual and formal parameters refer to the same locations, so any changes made inside the function are reflected in the actual parameters of the caller.
--   Lambda Function: `auto lambda_function = [](parameters) -> return_type {};`
-
-### 11. Pointers
-
--   & is reference operator or address operator it returns the address of that var object
--   stores the address of the variable and `*` is used to dereference that address and access the value
--   Size of pointer = 8bytes ( address occupies 8bytes of storage)
--   & is reference operator or address operator it returns the address of that var object
--   ```cpp
-      return_type variable_name = val;
-      return_type * pointer_name = & variable_name;
-      pointer_name --> address of variable_name
-      * pointer_name --> value at address of variable_name
-    ```
-
-### 12. Time Complexity
+#### 9. Time Complexity
 
 | Input Length | Worst Accepted Time Complexity | Usually type of solutions                                       |
 | ------------ | ------------------------------ | --------------------------------------------------------------- |
@@ -165,19 +84,10 @@ filehandling(){
 | 1M           | O(N\* log N)                   | Sorting, Binary Search, Divide and Conquer                      |
 | 100M         | O(N), O(log N), O(1)           | Constructive, Mathematical, Greedy Algorithms                   |
 
-### 13. Error Handling
+#### 10. [Error Handling (GFG)](https://www.geeksforgeeks.org/exception-handling-c/)
 
--   `try { throw SomeExceptionType("Error message");} catch( ExceptionName e1 ) {} `
--   `catch(...)`: catches all types of exceptions
--   Implicit type conversion doesn't happen for primitive types
--   If an exception is thrown and not caught anywhere, the program terminates abnormally.
--   try/catch blocks can be nested. Also, an exception can be re-thrown using “throw; “.
--   When an exception is thrown, all objects created inside the enclosing try block are destroyed before the control is transferred to the catch block.
+#### 11. [OOPS](OOPS/OOPS.md)
 
-### 14. [OOPS](OOPS/OOPS.md)
+#### 12. [Data Structures](Data%20Structures/DataStructures.md)
 
-### 15. [Data Structures](Data%20Structures/DataStructures.md)
-
-### 16. [Algorithms](Algorithms/Algorithms.md)
-
-### 17. [Competitive Programming](Competitive%20Programming/CP.md)
+#### 13. [Algorithms](Algorithms/Algorithms.md)

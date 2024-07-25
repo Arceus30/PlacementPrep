@@ -1,39 +1,42 @@
 # Server
 
-### 1. Nodemon
-
--   restart the server automatically after any updatation
-
-### 2. dotenv
-
--   A '.env' file is created in the project which stores all the environment variables
--   'dotenv' module is used to load these environment variables in the development phase
--   ```js
-    require("dotenv").config();
-    ```
-
-### 2. [HTTP Server](HTTP%20Server/HTTPServer.md)
-
-### 3. [Express](Express/Express.md)
-
-### 4. MVC
+#### 1. MVC
 
 **Model View Controller**
 
--   Software design pattern that separates an application’s logic into three interconnected components.
 -   Components of MVC:
     -   Model: It manages the data and provides it to the View component.
     -   View: Responsible for rendering the user interface (UI) and displaying the data provided by the Model.
     -   Controller: Acts as an intermediary between the Model and View, handling user input, processing data, and updating the View accordingly.
 
-### 5. [XMLHTTP Request](XMLHTTP/XMLHTTP.md)
+#### 2. [Nodemon](https://nodemon.io/)
 
-### 6. [Fetch](Fetch/Fetch.md)
+#### 3. [dotenv](https://github.com/motdotla/dotenv#readme)
 
-### 7. [Axios](Axios/Axios.md)
+```js
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
+```
 
-### 8. [Auth](Auth/Auth.md)
+#### 4. [Cors](https://github.com/expressjs/cors#readme)
 
-### 9. [WebSockets](WebSocket/WebSocket.md)
+-   Cors need to be setup for cross origin access
 
-### 10. [Clustering](https://youtu.be/JoPZ9gEvpz8?si=c_YBpWBMhvu7aOYE)
+#### 4. [HTTP Server](HTTP%20Server/HTTPServer.md)
+
+#### 5. [Express](Express/Express.md)
+
+**Note**:
+
+-   In order to prevent race condition we should abort any pending requests first and then send a new request from frontend to server
+
+#### 6. [XMLHTTP Request](XMLHTTP/XMLHTTP.md)
+
+#### 7. [Fetch](Fetch/Fetch.md)
+
+#### 8. [Axios](Axios/Axios.md)
+
+#### 9. [Auth](Auth/Auth.md)
+
+#### 10. [WebSockets](WebSocket/WebSocket.md)
+
+#### 11. [Clustering](https://youtu.be/JoPZ9gEvpz8?si=c_YBpWBMhvu7aOYE)

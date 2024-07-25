@@ -1,25 +1,21 @@
 # HTTP Server
 
-### 1. RESTful Http
+#### 1. RESTful Http
 
 **HTTP methods**
 
 -   **GET**
     -   retrieve data
-    -   Request query
-    -   Server returns the requested data
+    -   req.query
 -   **POST**
     -   create resource
-    -   Request body
-    -   Server returns the new resource
+    -   req.body
 -   **DELETE**
     -   delete a resource
-    -   Request query / body
-    -   Server returns the deleted resource
+    -   req.query / req.body
 -   **PUT**
     -   update existing resource by replacing entire resource
-    -   Request body
-    -   Server returns the updated response
+    -   req.body
 -   **HEAD**
     -   retrieving only meta-data
 -   **PATCH**
@@ -39,35 +35,40 @@
     -   /abc :- returns the complete html document
     -   /api/abc :- returns only the requested data
 
-### 2. HTTP Server And Url
+#### 2. HTTP Server And Url
 
--   `http` module is used to create and handle http servers
--   `url` module is used to parse the req.url
--   ```js
-    const http = require("http");
-    const url = require("url");
+-   [HTTP](https://nodejs.org/api/http.html) module is used to create and handle http servers
+-   [url](https://developer.mozilla.org/en-US/docs/Web/API/URL) module is used to parse the req.url
 
-    // creates server
-    const myServer = http.createServer((req, res) => {
-        res.end(Message); //message sent at the end to the client
-        // req.url contains entire url including domain name, path, query or other parameters
+```js
+const http = require("http");
+const url = require("url");
 
-        // url.parse() parses the req.url and return an object with different properties: protocol, pathName, query etc
-        // parseQueryString creates an object of query string key-value pairs
-        const myUrl = url.parse(req.url, { parseQueryString: true });
+// creates server
+const myServer = http.createServer((req, res) => {
+    // req.url contains entire url including domain name, path, query or other parameters
 
-        // to handle different routes
-        switch (myUrl.pathName) {
-            case u1:
-                const username = myUrl.query.username;
-                break;
-            case u2:
-            default:
-        }
-    });
+    // url.parse() parses the req.url and return an object with different properties: protocol, pathName, query etc
 
-    // server launches on portNo
-    myServer.listen(portNo, () => {});
-    ```
+    // parseQueryString creates an object of query string key-value pairs
 
-### 3. [Http Status Codes](https://quickref.me/http-status-code)
+    const myUrl = url.parse(req.url, { parseQueryString: true });
+
+    // to handle different routes
+    switch (myUrl.pathName) {
+        case u1:
+            const username = myUrl.query.username;
+            break;
+        case u2:
+        default:
+    }
+
+    //message sent at the end to the client
+    res.end(Message);
+});
+
+// server launches on portNo
+myServer.listen(portNo, () => {});
+```
+
+#### 3. [Http Status Codes](https://quickref.me/http-status-code)

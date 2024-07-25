@@ -11,7 +11,7 @@
         }
         ```
 
-### 1. Pipeline
+#### 1. Pipeline
 
 -   Fist install babel
 -   Install the plugin: `npm i -D @babel/plugin-proposal-pipeline-operator`
@@ -39,7 +39,7 @@
         console.log(a);
         ```
 
-### 2. prompt()
+#### 2. prompt()
 
 -   prompt: `prompt("Statement",def_val)`
     -   `npm init -y`

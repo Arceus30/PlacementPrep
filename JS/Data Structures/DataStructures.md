@@ -1,6 +1,6 @@
 # DATA STRUCTURES
 
-### 1. Strings
+#### 1. Strings
 
 -   Strings are immutable
 -   **Template literals:** `let b1 = "Pramod", b2 = "Nikhil", sentence = `${b1} is a friend of ${b2}`;`
@@ -16,7 +16,7 @@
     -   `s1.trim()`: it trims extra whitespaces
     -   `s1.includes(word)`: returns true if word is in the sentence and false if it is not
 
-### 2. Arrays
+#### 2. Arrays
 
 -   **Destructuring:** arrays and any other object can be destructured, `const [n1, n2, ...n] = a;`
 -   `arr.toString()`: returns a string formed from the array
@@ -41,7 +41,7 @@
 -   `array.some(fun)`: it returns true if any element passes the `fun`
 -   `array.every(fun)`: it returns true if all elements passes the `fun`
 
-### 3. Objects
+#### 3. Objects
 
 -   Accessibility: `obj[]`, `obj.`
 -   `Object.keys(obj)`: it returns an array of keys of the object obj
@@ -53,7 +53,9 @@
 -   `this`
     -   object excuting the code or context
     -   Globally: When used outside of any function or object, this refers to the global object.(generally windows)
-    -   Inside the function: Inside a function, the value of 'this' depends on how the function is called. If the function is called directly and not by any object, 'this' will again refer to the global object.
+    -   Inside the function:
+        -   Called by an object: 'this' is equal to the object
+        -   Directly and not by any object: 'this' will again refer to the global object.
     -   Arrow Function :- Arrow functions do not have their own 'this' context. They inherit 'this' value from the surrounding scope (lexical scoping).
 -   Prototype
     -   functions defined in prototype of an object are available to all the instances of that class
